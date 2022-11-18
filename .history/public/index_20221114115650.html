@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="stylesheet" href="index.css">
+    
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>React App</title>
+  </head>
+  <body>
+   <h1 style="text-align: center;">Instagram Login Feed</h1>
+   <form id="myForm">
+    <input type="text" id="username" placeholder="Username"></input> 
+   </form>
+    <div id="root"></div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="instafeed.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#myForm").submit(function(e){
+        e.preventDefault()
+        var username=$("#username").val()
+        $.instagramFeed({
+          'username':username,
+          'container':"#instagram-feed-demo"
+        })
+      })
+    })
+  </script>
+</html>
